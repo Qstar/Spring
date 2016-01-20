@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:context="http://www.springframework.org/schema/context"
-    xmlns:aop="http://www.springframework.org/schema/aop"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans 
-        http://www.springframework.org/schema/beans/spring-beans.xsd  
-        http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd
-        http://www.springframework.org/schema/aop 
-        http://www.springframework.org/schema/aop/spring-aop.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
         
      <bean id="moocBeforeAdvice" class="com.imooc.aop.api.MoocBeforeAdvice"></bean>
      
@@ -17,9 +11,9 @@
      <bean id="moocMethodInterceptor" class="com.imooc.aop.api.MoocMethodInterceptor"></bean>
      
      <bean id="moocThrowsAdvice" class="com.imooc.aop.api.MoocThrowsAdvice"></bean>
-     
-     
-     
+
+
+
 <!--     <bean id="bizLogicImplTarget" class="com.imooc.aop.api.BizLogicImpl"></bean> -->
 
 <!-- 	<bean id="pointcutBean" class="org.springframework.aop.support.NameMatchMethodPointcut"> -->
@@ -29,12 +23,12 @@
 <!-- 			</list> -->
 <!-- 		</property> -->
 <!-- 	</bean> -->
-	
+
 <!-- 	<bean id="defaultAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor"> -->
 <!-- 		<property name="advice" ref="moocBeforeAdvice" /> -->
 <!-- 		<property name="pointcut" ref="pointcutBean" /> -->
 <!-- 	</bean> -->
-	
+
 <!-- 	<bean id="bizLogicImpl" class="org.springframework.aop.framework.ProxyFactoryBean"> -->
 <!-- 		<property name="target"> -->
 <!-- 			<ref bean="bizLogicImplTarget"/> -->
@@ -48,8 +42,8 @@
 <!-- 			</list> -->
 <!-- 		</property> -->
 <!-- 	</bean>   -->
-        
-        
+
+
 
 <!-- 	<bean id="bizLogicImplTarget" class="com.imooc.aop.api.BizLogicImpl"></bean> -->
 
@@ -75,7 +69,7 @@
 
 
 
-	<bean id="baseProxyBean" class="org.springframework.aop.framework.ProxyFactoryBean" 
+	<bean id="baseProxyBean" class="org.springframework.aop.framework.ProxyFactoryBean"
 			lazy-init="true" abstract="true"></bean>
 	
 	<bean id="bizLogicImpl"  parent="baseProxyBean">
